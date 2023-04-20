@@ -4,12 +4,12 @@ import { CoursesService } from "./courses.service";
     selector: 'courses',
     template: `
     <div>
-        <input type="text" (keyup.enter)="onKeyUp()">
+        <input type="text" (keyup.enter)="oNKeyUp()">
     </div>
     `
 })
 export class CoursesComponent{
-    onKeyUp(){
+    oNKeyUp(){
         console.log('enter is pressed.')
     }
 }  
