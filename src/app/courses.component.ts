@@ -3,19 +3,13 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses',
     template: `
-    <div (click)="onDivClick()" >
-    <button class="btn btn-success" (click)="onSave($event)" >Save</button>
+    <div>
+        <input type="text" (keyup.enter)="onKeyUp()">
     </div>
     `
 })
 export class CoursesComponent{
-    
-    onDivClick(){
-        console.log("div clicked")
+    onKeyUp(){
+        console.log('enter is pressed.')
     }
-
-    onSave($event : Event){
-        $event.stopPropagation();
-        console.log("The button was clicked.",$event)
-    }
-} 
+}  
