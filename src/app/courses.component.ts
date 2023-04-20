@@ -3,19 +3,19 @@ import { CoursesService } from "./courses.service";
 @Component({
     selector: 'courses',
     template: `
-
-    <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'green' : 'red'" >Save</button>
+    <div (click)="onDivClick()" >
+    <button class="btn btn-success" (click)="onSave($event)" >Save</button>
+    </div>
     `
 })
 export class CoursesComponent{
-    title = 'This is discord which will help you connect with our community!!'
     
-    courses; 
-
-    isActive = true;
-    
-    constructor(services: CoursesService){
-        this.courses = services.getCourses();
+    onDivClick(){
+        console.log("div clicked")
     }
-             
+
+    onSave($event : Event){
+        $event.stopPropagation();
+        console.log("The button was clicked.",$event)
+    }
 } 
